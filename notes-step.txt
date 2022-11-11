@@ -1,0 +1,21 @@
+docker run --rm -v $(pwd):/app composer install
+
+sudo chown -R sammy:sammy ~/laravel-app
+
+cp .env.example .env
+
+docker-compose up -d
+
+docker ps
+
+docker-compose exec app php artisan key:generate
+
+docker-compose exec app php artisan config:cache
+
+docker-compose exec db bash
+
+docker-compose exec app php artisan migrate
+
+docker-compose exec app php artisan tinker
+
+ref: https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose-on-ubuntu-20-04
