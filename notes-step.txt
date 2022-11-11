@@ -19,3 +19,8 @@ docker-compose exec app php artisan migrate
 docker-compose exec app php artisan tinker
 
 ref: https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose-on-ubuntu-20-04
+
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+docker run --rm -it php:7.4 php -r "var_dump(mb_ereg_match('^99.*', '123456'));"                                                                                      
+docker run --rm -it php:7.4 php -r "var_dump(mb_ereg_match('^12.*', '123456'));"
