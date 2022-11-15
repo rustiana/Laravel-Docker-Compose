@@ -27,3 +27,8 @@ solve:
     src: https://stackoverflow.com/questions/59838692/mysql-root-password-is-set-but-getting-access-denied-for-user-rootlocalhost
     docker-compose down -v
     docker-compose up -d
+
+#install passport
+docker-compose exec app composer require laravel/passport
+docker-compose exec app php artisan migrate
+docker-compose exec app php artisan passport:install
