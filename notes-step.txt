@@ -21,3 +21,9 @@ docker-compose exec app php artisan tinker
 ref: https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose-on-ubuntu-20-04
 
 git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+error:  Access denied for user 'root'@'localhost' (using password: YES)
+solve: 
+    src: https://stackoverflow.com/questions/59838692/mysql-root-password-is-set-but-getting-access-denied-for-user-rootlocalhost
+    docker-compose down -v
+    docker-compose up -d
